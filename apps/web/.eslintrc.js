@@ -1,3 +1,4 @@
 module.exports = {
-  extends: ["custom/next"],
+  extends: ["custom/next", "prettier"],
+  ignorePatterns: ["*.config.js"],
 };
