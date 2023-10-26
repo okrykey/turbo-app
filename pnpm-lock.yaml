@@ -16,7 +16,7 @@ importers:
         version: 1.0.7(@prisma/client@5.4.2)(next-auth@4.24.3)
       '@prisma/client':
         specifier: ^5.4.2
-        version: 5.4.2
+        version: 5.4.2(prisma@5.2.0)
       auth:
         specifier: link:packages/auth
         version: link:packages/auth
@@ -162,6 +162,9 @@ importers:
       ui:
         specifier: workspace:*
         version: link:../../packages/ui
+      zustand:
+        specifier: ^4.4.4
+        version: 4.4.4(@types/react@18.2.5)(react@18.2.0)
     devDependencies:
       '@next/eslint-plugin-next':
         specifier: ^13.4.19
@@ -210,7 +213,7 @@ importers:
     dependencies:
       '@prisma/client':
         specifier: latest
-        version: 5.3.1(prisma@5.2.0)
+        version: 5.4.2(prisma@5.2.0)
     devDependencies:
       prisma:
         specifier: latest
@@ -232,7 +235,7 @@ importers:
     dependencies:
       database:
         specifier: '*'
-        version: 0.0.1
+        version: 0.0.2
 
   packages/tsconfig: {}
 
@@ -1484,7 +1487,7 @@ packages:
       '@prisma/client': '>=2.26.0 || >=3'
       next-auth: ^4
     dependencies:
-      '@prisma/client': 5.4.2
+      '@prisma/client': 5.4.2(prisma@5.2.0)
       next-auth: 4.24.3(next@13.5.6)(react-dom@18.2.0)(react@18.2.0)
     dev: false
 
@@ -1718,21 +1721,7 @@ packages:
       tslib: 2.5.3
     dev: true
 
-  /@prisma/client@5.3.1(prisma@5.2.0):
-    resolution: {integrity: sha512-ArOKjHwdFZIe1cGU56oIfy7wRuTn0FfZjGuU/AjgEBOQh+4rDkB6nF+AGHP8KaVpkBIiHGPQh3IpwQ3xDMdO0Q==}
-    engines: {node: '>=16.13'}
-    requiresBuild: true
-    peerDependencies:
-      prisma: '*'
-    peerDependenciesMeta:
-      prisma:
-        optional: true
-    dependencies:
-      '@prisma/engines-version': 5.3.1-2.61e140623197a131c2a6189271ffee05a7aa9a59
-      prisma: 5.2.0
-    dev: false
-
-  /@prisma/client@5.4.2:
+  /@prisma/client@5.4.2(prisma@5.2.0):
     resolution: {integrity: sha512-2xsPaz4EaMKj1WS9iW6MlPhmbqtBsXAOeVttSePp8vTFTtvzh2hZbDgswwBdSCgPzmmwF+tLB259QzggvCmJqA==}
     engines: {node: '>=16.13'}
     requiresBuild: true
@@ -1743,10 +1732,7 @@ packages:
         optional: true
     dependencies:
       '@prisma/engines-version': 5.4.1-2.ac9d7041ed77bcc8a8dbd2ab6616b39013829574
-    dev: false
-
-  /@prisma/engines-version@5.3.1-2.61e140623197a131c2a6189271ffee05a7aa9a59:
-    resolution: {integrity: sha512-y5qbUi3ql2Xg7XraqcXEdMHh0MocBfnBzDn5GbV1xk23S3Mq8MGs+VjacTNiBh3dtEdUERCrUUG7Z3QaJ+h79w==}
+      prisma: 5.2.0
     dev: false
 
   /@prisma/engines-version@5.4.1-2.ac9d7041ed77bcc8a8dbd2ab6616b39013829574:
@@ -4730,11 +4716,6 @@ packages:
     resolution: {integrity: sha512-a9l6T1qqDogvvnw0nKlfZzqsyikEBZBClF39V3TFoKhDtGBqHu2HkuomJc02j5zft8zrUaXEuoicLeW54RkzPg==}
     engines: {node: '>= 14'}
     dev: true
-
-  /database@0.0.1:
-    resolution: {integrity: sha512-CkzXC30gBgCumyia7f4kgWlWLksk5smMFPGw6N06BinmCF3z960r1XLOYAnSgas8tp2qd2abH28YKxhYEJ4cbw==}
-    engines: {node: '>= 0.4.0'}
-    dev: false
 
   /database@0.0.2:
     resolution: {integrity: sha512-lrqvU32firrb2TBjn4Iv9V1Mh90rqUtyyLAvdSqdGP2w7IrNy+oI5IqGNowHq8o+/WVnQtKNfNIpLYd6uWZLHw==}
@@ -10682,6 +10663,14 @@ packages:
       tslib: 2.5.3
     dev: false
 
+  /use-sync-external-store@1.2.0(react@18.2.0):
+    resolution: {integrity: sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      react: 18.2.0
+    dev: false
+
   /util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
 
@@ -11038,4 +11027,24 @@ packages:
 
   /zod@3.21.4:
     resolution: {integrity: sha512-m46AKbrzKVzOzs/DZgVnG5H55N1sv1M8qZU3A8RIKbs3mrACDNeIOeilDymVb2HdmP8uwshOCF4uJ8uM9rCqJw==}
+    dev: false
+
+  /zustand@4.4.4(@types/react@18.2.5)(react@18.2.0):
+    resolution: {integrity: sha512-5UTUIAiHMNf5+mFp7/AnzJXS7+XxktULFN0+D1sCiZWyX7ZG+AQpqs2qpYrynRij4QvoDdCD+U+bmg/cG3Ucxw==}
+    engines: {node: '>=12.7.0'}
+    peerDependencies:
+      '@types/react': '>=16.8'
+      immer: '>=9.0'
+      react: '>=16.8'
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      immer:
+        optional: true
+      react:
+        optional: true
+    dependencies:
+      '@types/react': 18.2.5
+      react: 18.2.0
+      use-sync-external-store: 1.2.0(react@18.2.0)
     dev: false
